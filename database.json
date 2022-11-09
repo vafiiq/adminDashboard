@@ -1,0 +1,21 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "user_name": "Jack Nicholson",
+      "score": 98
+    },
+    {
+      "user_name": "tyler hoechlin",
+      "score": "5",
+      "id": 2
+    }
+  ],
+  "rating": [
+    {
+      "id": 1,
+      "user_name": "Jack Nicholson",
+      "score": 9
+    }
+  ]
+}

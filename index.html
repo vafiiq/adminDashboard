@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lesson-7</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css"> -->
+</head>
+
+<body>
+
+  <header class="bg-success">
+    <div class="container">
+      <nav class="nav p-3">
+        <h2 class="nav__log text-white">ADMIN DASHBOARD</h2>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 p-2 shadow m-1">
+          <form action="#" id="send">
+            <label class="w-100" for="user_name">
+              Enter username
+              <input type="text" class="form-control" placeholder="Enter username" required id="userName">
+            </label>
+
+            <label class="w-100" for="user_name">
+              Enter score
+              <input type="number" class="form-control" placeholder="Enter username" required id="userScore">
+            </label>
+
+            <button type="submit" class="btn btn-success my-2 w-100">ADD INFORMATION</button>
+          </form>
+        </div>
+        <div class="col-md-7 p-2 bg-light shadow m-1">
+          <table class="table table-striped table-hover table-bordered">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>User name</th>
+                <th>score</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
+              </tr>
+            <tbody>
+
+
+
+            </tbody>
+            </thead>
+          </table>
+        </div>
+        <div class="col-md-1 p-2 bg-primary shadow m-1"></div>
+      </div>
+    </div>
+  </main>
+
+</body>
+<script src="./pulign.js"></script>
+<script src="./script.js"></script>
+
+</html>
