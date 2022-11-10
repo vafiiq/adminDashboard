@@ -4,4 +4,17 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
   }
-  
+  body{
+    overflow-x: hidden;
+  }
+  .toastify{
+    background-color: lime;
+    padding: 7px;
+    border-radius: 3px;
+    width: 220px;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    transform: translateX(200%);
+    transition: transform 1s cubic-bezier(0.01, 0.177, 0.178, 0.49);
+  }
