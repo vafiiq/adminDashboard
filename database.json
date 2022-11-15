@@ -1,26 +1,5 @@
 {
-  "user": [
-    {
-      "id": 1,
-      "user_name": "Jack Nicholson",
-      "score": 98
-    },
-    {
-      "user_name": "tyler hoechlin",
-      "score": "5",
-      "id": 2
-    },
-    {
-      "user_name": "qwertyuiop",
-      "score": "5",
-      "id": 3
-    },
-    {
-      "user_name": "zaki",
-      "score": "99",
-      "id": 4
-    }
-  ],
+  "user": [],
   "rating": [
     {
       "id": 1,
