@@ -1,8 +1,17 @@
 "use strict";
-
+let urlBase = "https://n36-todolist.herokuapp.com"
+let authToken = localStorage.getItem('token');
 // ------------ GET USER LIST -------------------- //
 function getUser() {
-   fetch('http://localhost:7777/user')
+   fetch(`${urlBase}/todos`, {
+
+      method: "GET",
+      headers: {
+         "Content-Type": "application/json",
+         'token': authToken
+      },
+
+   })
       .then((response) => response.json())
       .then((result) => renderData(result))
 }
@@ -60,10 +69,11 @@ const addUser = () => {
 
       setTimeout(() => {
          $('.toastify').style.transform = 'translateX(200%)';
-         fetch('http://localhost:7777/user', {
+         fetch(`${urlBase}`, {
             method: "POST",
             headers: {
                "Content-Type": "application/json",
+               'token': authToken
             },
             body: JSON.stringify({
                user_name: userName,
@@ -102,10 +112,11 @@ const deleteUser = (id) => {
    setTimeout(() => {
 
       $('.toastify').style.transform = 'translateX(200%)';
-      fetch(`http://localhost:7777/user/${id}`, {
+      fetch(`${urlBase}/todos/${id}`, {
          method: "DELETE",
          headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            'token': authToken
          },
          body: JSON.stringify({})
       })
@@ -124,7 +135,13 @@ $('tbody').addEventListener('click', (e) => {
       let id = e.target.getAttribute('data-edit');
       localStorage.setItem('editUser', id);
 
-      fetch(`http://localhost:7777/user/${id}`)
+      fetch(`${urlBase}/todos/${id}`, {
+         method: "PUT",
+         headers: {
+            "Content-Type": "application/json",
+            'token': authToken
+         }
+      })
          .then((res => res.json()))
          .then((result => setValue(result)))
          .catch((err) => console.log(err))
@@ -155,7 +172,7 @@ const updateUser = () => {
       }, 1500)
 
    } else {
-      fetch(`http://localhost:7777/user/${id}`, {
+      fetch(`${urlBase}/todos/${id}`, {
 
          method: "PUT",
          headers: {
@@ -182,20 +199,20 @@ function setValue(data) {
    $('#scoreEdit').value = data.score;
 }
 
-function logined () {
+function logined() {
    let userName = localStorage.getItem('userName')
    if (userName) {
 
       $("#login_user").innerHTML = `${userName}`
 
    }
-   else{
+   else {
       window.location.replace('./login.html')
    }
 }
 logined()
 
-$("#out").addEventListener("click", ()=>{
+$("#out").addEventListener("click", () => {
    localStorage.clear()
    logined()
 })

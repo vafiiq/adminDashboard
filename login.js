@@ -9,7 +9,7 @@ const auth = () => {
         password: password
     }
     console.log(params)
-    fetch(`${BASE_URL}/signup`, {
+    fetch(`${BASE_URL}/login`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -48,6 +48,5 @@ const auth = () => {
 
 $('#login').addEventListener("submit", (e) => {
     e.preventDefault()
-    console.log("ok")
     auth()
 })
